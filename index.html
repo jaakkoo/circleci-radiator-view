@@ -83,7 +83,7 @@
 
       _.map(repository.branches, (branch, name) => {
         const buildStatus = branch.recent_builds[0].outcome
-        const buildName = `${project}: ${name}`
+        const buildName = `${project}: ${decodeURIComponent(name)}`
         const buildTime = new Date(branch.recent_builds[0].pushed_at)
 
         const newNode = document.createElement('li')
